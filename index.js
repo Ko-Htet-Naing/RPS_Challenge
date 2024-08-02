@@ -27,10 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function generateChoice() {
     systemChoiceOption = RPS[Math.floor(Math.random() * RPS.length)];
-    console.log(
-      "🚀 ~ generateChoice ~ systemChoiceOption:",
-      systemChoiceOption
-    );
     const div = document.createElement("div");
     const image = document.createElement("img");
     switch (systemChoiceOption) {
@@ -189,5 +185,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   rules_button.addEventListener("click", function () {
     hideOverlay();
+  });
+  getElement(".rest--button").addEventListener("click", function () {
+    localStorage.removeItem("Score");
+    location.reload();
   });
 });
