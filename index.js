@@ -98,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
       showPlayStatus("you win");
       return;
     } else {
+      win_count -= 1;
+      localStorage.setItem("Score", win_count);
       showPlayStatus("you lose");
       return;
     }
